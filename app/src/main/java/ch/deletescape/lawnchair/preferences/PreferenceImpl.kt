@@ -25,6 +25,10 @@ open class PreferenceImpl(context: Context) : IPreferenceProvider {
         return getString(PreferenceFlags.KEY_PREF_NUM_ROWS_DRAWER, default)
     }
 
+    override fun numRowsDrawer(value: String, commit: Boolean ) {
+        setString(PreferenceFlags.KEY_NUM_COLS_DRAWER, value, commit)
+    }
+
     override fun numHotseatIcons(default: String): String {
         return getString(PreferenceFlags.KEY_PREF_NUM_HOTSEAT_ICONS, default)
     }
@@ -113,6 +117,10 @@ open class PreferenceImpl(context: Context) : IPreferenceProvider {
 
     override fun numColsDrawer(default: String): String {
         return getString(PreferenceFlags.KEY_NUM_COLS_DRAWER, default)
+    }
+
+    override fun numColsDrawer(value: String, commit: Boolean ) {
+        setString(PreferenceFlags.KEY_NUM_COLS_DRAWER, value, commit)
     }
 
     override val iconScaleSB by FloatPref(PreferenceFlags.KEY_ICON_SCALE_SB, 1f)

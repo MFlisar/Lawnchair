@@ -116,7 +116,9 @@ interface IPreferenceProvider {
     fun numRows(default: String): String
     fun numCols(default: String): String
     fun numColsDrawer(default: String): String
+    fun numColsDrawer(value: String, commit: Boolean = false)
     fun numRowsDrawer(default: String): String
+    fun numRowsDrawer(value: String, commit: Boolean = false)
     fun numHotseatIcons(default: String): String
     val iconScaleSB: Float
     val iconTextScaleSB: Float
