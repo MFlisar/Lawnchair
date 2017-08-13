@@ -133,6 +133,8 @@ public class Settings implements SharedPreferences.OnSharedPreferenceChangeListe
                 case PreferenceFlags.KEY_PREF_SHOW_TOP_SHADOW:
                     mLauncher.getDragLayer().updateTopShadow();
                     break;
+                case PreferenceFlags.KEY_CENTER_WALLPAPER:
+                    mLauncher.getWorkspace().getWallpaperOffset().updateCenterWallpaper();
                 default:
                     las.reloadAll(false);
             }
@@ -140,7 +142,7 @@ public class Settings implements SharedPreferences.OnSharedPreferenceChangeListe
     }
 
     private void applyAllAppsOpacity(IPreferenceProvider prefs) {
-        int tmp = (int) (prefs.allAppsOpacity() * 255);
+        int tmp = (int) (prefs.getAllAppsOpacity() * 255);
         mLauncher.getAllAppsController().setAllAppsAlpha(mLauncher, tmp);
     }
 }
