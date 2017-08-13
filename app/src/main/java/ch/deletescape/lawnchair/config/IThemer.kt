@@ -14,6 +14,9 @@ interface IThemer {
 
     fun allAppsBackgroundColor(context: Context) : Int
     fun allAppsBackgroundColorBlur(context: Context) : Int
+    /*
+     * this color is used for the icon texts and for the nothing found text (attention: the nothing found text will look different, it has some alpha defined in xml!)
+     */
     fun allAppsIconTextColor(context: Context, allAppsAlpha: Int) : Int
     fun allAppsIconTextLines(context: Context) : Int
     fun allAppsSearchTextColor(context: Context) : Int?
